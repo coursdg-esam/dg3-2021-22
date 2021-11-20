@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  <meta charset="utf-8">
+  <title>jQuery menu Effect</title>
+  <link rel="stylesheet" href="ui/css/slideLeft.css">
+  <script src="ui/js/jquery-3.6.0.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+      <button type="button" class="menu">Menu</button>
+      <hr>
+      <nav>
+        <ul>
+          <li>Accueil</li>
+          <a href="#" lien="carrousel.html"><li>Galerie</li></a>
+          <li>Web</li>
+          <a href="#" lien="https://www.esam-c2.fr/" target="_blank"><li>Ésam</li></a>
+        </ul>
+      </nav>
+      <script>
+          let boxWidth = $('.box').width();
+          let visible = false;
+          var liens = ["slideToggle.html",'animate.html','carrousel.html'];
+          console.log(liens[Math.floor(Math.random() * liens.length)]);
+          $('.menu').on('click',function(){
+            if(visible){
+              $('nav').animate({
+                  left: '-450px'
+              });
+            } else {
+              $('nav').animate({
+                  left: '8px'
+              });
+            }
+            visible = !visible;
+          });
+
+          $('nav ul > a').on('click', function() {
+            var lien = $(this).attr('lien');
+            $('nav').animate({left: '-450px'},600);
+            setTimeout(function() {
+              window.open(lien,'_self');
+
+            },600);
+          })
+
+      </script>
+  </body>
+</html>

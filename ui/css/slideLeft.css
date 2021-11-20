@@ -1,0 +1,32 @@
+:root {
+  font-family: Verdana;
+}
+
+a {
+  color: rgb(0 0 0);
+  text-decoration: none;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+.box, nav{
+    position:absolute;
+    /*overflow: hidden;*/
+    background: rgb(40 255 228);
+    left: -450px;
+    color: #000;
+}
+
+.box-inner, ul{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #a29415;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul a:hover {
+  text-decoration: underline;
+}
