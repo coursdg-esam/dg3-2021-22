@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Animation</title>
+    <script src="ui/js/jquery-3.6.0.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Animation</h1>
+    <h2>stop</h2>
+    <script type="text/javascript">
+    /*
+      animation jQuery avec requestAnimationFrame et cancelAnimationFrame
+    */
+      const titre = $('h1');
+      titre.css({
+        'position':'absolute',
+        'top' : '40px'
+      });
+      let posTop = 40;
+      let dir = 1;
+
+      function hautBas() {
+
+        if (posTop == 300) {
+          dir = -1;
+        } else if (posTop == 40) {
+          dir = 1;
+        }
+        posTop += 2*dir;
+
+        titre.css('top',`${posTop}px`);
+        ID1 = requestAnimationFrame(hautBas);
+      }
+      $('h1').on('click', function() {
+        hautBas();
+      })
+
+      $('h2').on('click', function() {
+        cancelAnimationFrame(ID1);
+      })
+
+      // requestAnimationFrame(hautBas); // exécuter une animation
+    </script>
+  </body>
+</html>
