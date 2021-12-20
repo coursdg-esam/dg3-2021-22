@@ -1,0 +1,16 @@
+nav ul {
+   list-style-type: none;
+}
+
+nav li {
+   color: rgb(255 0 0);
+}
+
+nav a {
+   color: rgb(0 0 255);
+   text-decoration: none;
+}
+
+nav a:hover {
+   text-decoration:  underline;
+}
